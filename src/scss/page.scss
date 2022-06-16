@@ -1,0 +1,124 @@
+* {
+    box-sizing: border-box;
+}
+
+link, a {
+    text-decoration: none;
+    color: #000;
+}
+
+.app {
+    display: grid;
+    grid-template-columns: 2fr 10fr;
+}
+
+nav {
+    background-color: #eee;
+    min-width: 20%;
+    height: 100vh;
+}
+
+.notePage {
+    padding: 3px;
+    border-bottom: 1px solid #999;
+    position: relative;
+    height: 30px;
+    font-size: 20px;
+    &:hover {
+        background-color: #fff;
+        transition: background-color 0.3s;
+      }
+}
+
+.activeNotePage {
+    padding: 3px;
+    border-bottom: 1px solid #999;
+    position: relative;
+    height: 30px;
+    font-size: 20px;
+    background-color: rgba(183, 252, 127, 0.6);
+    transition: background-color 0.3s;
+}
+
+.deleteNotePage {
+    position: absolute;
+    right: 10px;
+    top: 9px;
+    background-color: rgb(221, 36, 36);
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    &:hover {
+        transform: scale(1.1);
+    }
+}
+
+.notionArea {
+    padding: 10px;
+}
+
+.titleArea {
+    width: 100%;
+    height: 55px;
+    font-size: 40px;
+    color: #444;
+    resize: none;
+    border: none;
+    &:focus{
+        outline: none;
+    }
+}
+
+.textArea {
+    cursor: text;
+    width: 80vw;
+    min-height: 70vh;
+    padding: 5px;
+    font-size: 20px;
+    color: #000;
+    resize: none;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    &:focus{
+        outline: none;
+    }
+}
+
+// TAG
+
+.tagsContainer {
+    margin-top: 10px;
+}
+
+.tagInText {
+    background-color: #eee;
+    border-radius: 5px;
+}
+
+.tag {
+    height: 30px;
+    padding: 4px;
+    display: inline-block;
+    margin: 5px 5px 0 0;
+    background-color: rgba(36, 114, 231, 0.8);
+    border-radius: 4px;
+    color: #fff;
+}
+
+// SEARCH
+
+.searchContainer {
+    margin-top: 10px;
+    padding: 0 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.searchContainer input {
+    width: 100%;
+    height: 30px;
+    &:focus{
+        outline: none;
+    }
+}
