@@ -11,17 +11,12 @@ const Search = ({notes}) => {
                 if(tag.includes(`#${e.target.value}`)) ids.push(note.id)                
             })
         })}
-        // console.log(changeActiveNotesActionCreator())
         dispatch(changeActiveNotesActionCreator(ids))
-        // dispatch({
-        //     type: "CHANGE_ACTIVE_NOTES",
-        //     value: ids
-        // })
     }
 
     return (
         <div className="searchContainer">
-            <input type="text" onChange={e => findTags(e)}/>
+            <input placeholder="inpit keyword" type="text" onChange={e => findTags(e)}/>
         </div>
     )
 }

@@ -1,6 +1,7 @@
 import API from './../API/api';
 
 const ADD_NOTE = "ADD_NOTE";
+const SET_SERVER_IS_STARTED = "SET_SERVER_IS_STARTED";
 const DELETE_NOTE = "DELETE_NOTE";
 const SET_NOTES = "SET_NOTES";
 const SET_CURRENT_PAGE = "SET_CURRENT_PAGE";
@@ -16,7 +17,8 @@ const initialState = {
         text: "",
         tags: []
     },
-    activeNotes: []
+    activeNotes: [],
+    serverIsStarted: null
 }
 
 const pagesReducer = (state = initialState, action) => {
@@ -69,14 +71,21 @@ const pagesReducer = (state = initialState, action) => {
             return { ...stateCopy }
         case CHANGE_ACTIVE_NOTES:
             return { ...stateCopy, activeNotes: action.value }
+        case SET_SERVER_IS_STARTED:
+            return { ...stateCopy, serverIsStarted: action.value }
         default:
             return state;
     }
 }
 
 export const loadNotesThunkCreator = () => async (dispatch) => {
-    const response = await API.loadNotes();
-    dispatch(setNotesActionCreator(response.data));
+    try{
+        const response = await API.loadNotes();
+        dispatch(setNotesActionCreator(response.data));
+        dispatch(setServerIsStartedActionCreator(true))
+    }catch(e){
+        dispatch(setServerIsStartedActionCreator(false))
+    }
 }
 
 export const loadCurrentPageThunkCreator = (id) => async (dispatch) => {
@@ -137,6 +146,11 @@ export const changeTextActionCreator = (value) => ({
 
 export const changeActiveNotesActionCreator = (value) => ({
     type: CHANGE_ACTIVE_NOTES,
+    value: value
+});
+
+export const setServerIsStartedActionCreator = (value) => ({
+    type: SET_SERVER_IS_STARTED,
     value: value
 });
 

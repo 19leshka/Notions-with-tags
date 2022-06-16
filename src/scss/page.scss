@@ -7,7 +7,7 @@ link, a {
     color: #000;
 }
 
-.app {
+.appContainer {
     display: grid;
     grid-template-columns: 2fr 10fr;
 }
@@ -120,5 +120,29 @@ nav {
     height: 30px;
     &:focus{
         outline: none;
+    }
+}
+
+// SERVER ERROR
+
+.serverErrorContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+    .serverError {
+        color: red;
+        font-size: 40px;
+    }
+
+    .errorHelp {
+        font-size: 20px;
+        span {
+            background-color: rgba(50, 126, 240, 0.7);
+            padding: 0 5px;
+            border-radius: 4px;
+        }
     }
 }
