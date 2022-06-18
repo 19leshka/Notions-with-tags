@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/Notions-with-tags/static/css/main.37bdbffb.css",
+    "main.js": "/Notions-with-tags/static/js/main.9b67243e.js",
+    "index.html": "/Notions-with-tags/index.html",
+    "main.37bdbffb.css.map": "/Notions-with-tags/static/css/main.37bdbffb.css.map",
+    "main.9b67243e.js.map": "/Notions-with-tags/static/js/main.9b67243e.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.37bdbffb.css",
+    "static/js/main.9b67243e.js"
+  ]
+}
